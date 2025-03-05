@@ -47,26 +47,6 @@ class UserController extends Controller
         return response()->json(['message' => 'Unauthorized'], 401);
     }
 
-
-    public function sendResetLinkEmail(Request $request)
-    {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required|email',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 422);
-        }
-
-        $response = Password::sendResetLink(
-            $request->only('email')
-        );
-
-        return $response == Password::RESET_LINK_SENT
-                    ? response()->json(['message' => __($response)])
-                    : response()->json(['message' => __($response)], 500);
-    }
-
     public function resetPassword(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -93,5 +73,26 @@ class UserController extends Controller
                     ? response()->json(['message' => __($response)])
                     : response()->json(['message' => __($response)], 500);
     }
+
+    public function sendResetLinkEmail(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['errors' => $validator->errors()], 422);
+        }
+
+        $response = Password::sendResetLink(
+            $request->only('email')
+        );
+
+        return $response == Password::RESET_LINK_SENT
+                    ? response()->json(['message' => __($response)])
+                    : response()->json(['message' => __($response)], 500);
+    }
+
+
 
 }
