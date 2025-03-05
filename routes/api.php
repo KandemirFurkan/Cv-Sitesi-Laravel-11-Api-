@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AboutController;
+use App\Http\Controllers\Api\ContactController;
 
 
 
@@ -25,5 +26,5 @@ Route::get('/about', [AboutController::class, 'index']);
 Route::post('/about/update',[AboutController::class, 'update']);
 
 
-Route::get('/contact', [AboutController::class, 'index']);
-Route::post('/contact/store',[AboutController::class, 'store']);
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact/store',[ContactController::class, 'store']);
