@@ -23,3 +23,7 @@ Route::group(['prefix' => 'auth', 'as'=>'auth.'], function () {
 
 Route::get('/about', [AboutController::class, 'index']);
 Route::post('/about/update',[AboutController::class, 'update']);
+
+
+Route::get('/contact', [AboutController::class, 'index']);
+Route::post('/contact/store',[AboutController::class, 'store']);
