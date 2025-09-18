@@ -28,3 +28,4 @@ Route::post('/about/update',[AboutController::class, 'update']);
 
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact/store',[ContactController::class, 'store']);
+Route::post('/contact/mail/send',[ContactController::class, 'mailSend']);

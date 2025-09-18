@@ -31,6 +31,26 @@ class ContactController extends Controller
         return response()->json(['message' => 'Başarıyla Mesaj Gönderildi.','data'=> $contact], 200);
     }
 
+    public function mailSend(Request $request)
+    {
+        $subject=$request->input('subject');
+        $message=$request->input('message');
+        $email=$request->input('email');
+
+        $contact=Contact::where('email',$email)->first();
+
+if(empty($contact)){
+    return response()->json(['message' => 'E-posta bulunamadı'],401);
+}
+
+$contact->message=$message;
+Mail::to($email)->send(new ContactMail($subject,$contact));
+
+return response()->json(['message' => 'Mail Gönderildi'],200);
+
+
+    }
+
 
 
 }
