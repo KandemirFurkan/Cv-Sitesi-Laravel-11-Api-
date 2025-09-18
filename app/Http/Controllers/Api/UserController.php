@@ -57,6 +57,7 @@ class UserController extends Controller
 
         if ($validator->fails()) {
             return response()->json(['errors' => $validator->errors()], 422);
+
         }
 
         $response = Password::reset(
@@ -66,6 +67,7 @@ class UserController extends Controller
                     'password' => bcrypt($password),
                     'remember_token' => Str::random(60),
                 ])->save();
+
             }
         );
 
