@@ -2,10 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\TagController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\CareerController;
 use App\Http\Controllers\Api\ContactController;
+use App\Http\Controllers\Api\CategoryController;
 
 
 
@@ -34,3 +36,11 @@ Route::post('/contact/mail/send',[ContactController::class, 'mailSend']);
 Route::get('/careers', [CareerController::class, 'index']);
 Route::post('/career/store',[CareerController::class, 'store']);
 Route::post('/career/{id}/update',[CareerController::class, 'update']);
+
+Route::get('/tags', [TagController::class, 'index']);
+Route::post('/tags/store',[TagController::class, 'store']);
+Route::post('/tags/{id}/update',[TagController::class, 'update']);
+
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::post('/category/store',[CategoryController::class, 'store']);
+Route::post('/category/{id}/update',[CategoryController::class, 'update']);
