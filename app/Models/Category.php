@@ -21,5 +21,8 @@ class Category extends Model
         ];
     }
 
+    public function blog() {
+      return $this->belongsTo(Category::class,'category_id','id');
+    }
 
 }

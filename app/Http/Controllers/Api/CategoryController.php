@@ -62,6 +62,8 @@ class CategoryController extends Controller
 
             $images = $request->file('file');
 
+
+
             $uploadImageService = new UploadImageService();
 
             $uploadImageService->createFolder('uploads/category');

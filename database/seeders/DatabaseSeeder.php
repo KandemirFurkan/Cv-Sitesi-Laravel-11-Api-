@@ -24,6 +24,8 @@ class DatabaseSeeder extends Seeder
             CareerSeeder::class,
             TagSeeder::class,
             CategorySeeder::class,
+            BlogSeeder::class,
+
         ]);
     }
 }

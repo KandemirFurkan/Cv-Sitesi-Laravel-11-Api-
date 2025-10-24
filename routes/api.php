@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\TagController;
+use App\Http\Controllers\Api\BlogController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\CareerController;
@@ -44,3 +45,7 @@ Route::post('/tags/{id}/update',[TagController::class, 'update']);
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/category/store',[CategoryController::class, 'store']);
 Route::post('/category/{id}/update',[CategoryController::class, 'update']);
+
+Route::get('/blogs', [BlogController::class, 'index']);
+Route::post('/blog/store',[BlogController::class, 'store']);
+Route::post('/blog/{id}/update',[BlogController::class, 'update']);
