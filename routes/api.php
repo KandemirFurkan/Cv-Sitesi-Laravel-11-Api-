@@ -14,7 +14,6 @@ use App\Http\Controllers\Api\SorcialController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\ReferanceController;
-use App\Http\Controllers\Api\ReferenceController;
 use App\Http\Controllers\Api\SiteSettingController;
 
 
@@ -86,10 +85,10 @@ Route::post('/sitesetting/{id}/update', [SiteSettingController::class, 'update']
 
 
 
-Route::get('/references', [ReferenceController::class, 'index']);
-Route::get('/reference/{id}', [ReferenceController::class, 'edit']);
-Route::post('/reference/store', [ReferenceController::class, 'store']);
-Route::post('/reference/{id}/update', [ReferenceController::class, 'update']);
+Route::get('/referances', [ReferanceController::class, 'index']);
+Route::get('/referance/{id}', [ReferanceController::class, 'edit']);
+Route::post('/referance/store', [ReferanceController::class, 'store']);
+Route::post('/referance/{id}/update', [ReferanceController::class, 'update']);
 
 Route::get('/categories', [CategoryController::class, 'index']);
 Route::post('/category/store', [CategoryController::class, 'store']);
