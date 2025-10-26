@@ -10,7 +10,7 @@ use App\Http\Controllers\Api\CareerController;
 use App\Http\Controllers\Api\SliderController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ProjectController;
-use App\Http\Controllers\Api\SorcialController;
+use App\Http\Controllers\Api\SocialController;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\EducationController;
 use App\Http\Controllers\Api\ReferanceController;
@@ -69,11 +69,11 @@ Route::post('/slider/{id}/update', [SliderController::class, 'update']);
 
 
 
-Route::get('/sorcialmedias', [SorcialController::class, 'index']);
-Route::get('/sorcialmedia/{id}', [SorcialController::class, 'edit']);
-Route::post('/sorcialmedia/store', [SorcialController::class, 'store']);
-Route::post('/sorcialmedia/{id}/update', [SorcialController::class, 'update']);
-Route::post('/sorcialmedia/sortable', [SorcialController::class, 'order']);
+Route::get('/socialmedias', [SocialController::class, 'index']);
+Route::get('/socialmedia/{id}', [SocialController::class, 'edit']);
+Route::post('/socialmedia/store', [SocialController::class, 'store']);
+Route::post('/socialmedia/{id}/update', [SocialController::class, 'update']);
+Route::post('/socialmedia/sortable', [SocialController::class, 'order']);
 
 
 
