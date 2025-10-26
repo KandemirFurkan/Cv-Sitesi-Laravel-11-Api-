@@ -285,16 +285,16 @@
         },
         {
             "name": "cyrildewit/eloquent-viewable",
-            "version": "v7.0.4",
+            "version": "v7.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cyrildewit/eloquent-viewable.git",
-                "reference": "d3edccc5aef3dfb945831ab6be7cef90052b3edf"
+                "reference": "c4153d03f8c1fd7bd9397844e94c4cefc01b2cf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cyrildewit/eloquent-viewable/zipball/d3edccc5aef3dfb945831ab6be7cef90052b3edf",
-                "reference": "d3edccc5aef3dfb945831ab6be7cef90052b3edf",
+                "url": "https://api.github.com/repos/cyrildewit/eloquent-viewable/zipball/c4153d03f8c1fd7bd9397844e94c4cefc01b2cf2",
+                "reference": "c4153d03f8c1fd7bd9397844e94c4cefc01b2cf2",
                 "shasum": ""
             },
             "require": {
@@ -357,9 +357,15 @@
             ],
             "support": {
                 "issues": "https://github.com/cyrildewit/eloquent-viewable/issues",
-                "source": "https://github.com/cyrildewit/eloquent-viewable/tree/v7.0.4"
+                "source": "https://github.com/cyrildewit/eloquent-viewable/tree/v7.0.6"
             },
-            "time": "2025-03-01T11:30:00+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/cyrildewit",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-04-02T23:09:30+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

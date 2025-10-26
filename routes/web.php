@@ -1,11 +1,29 @@
 <?php
 
+use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+/*
+Route::get('/read/blog/{id}', function ($id) {
+
+        $blog = Blog::where('id',$id)->with('category')->first();
+
+        $expiresAt = now()->addMinutes(5);
+
+        views($blog)
+        ->cooldown($expiresAt)
+        ->record();
+
+        return response()->json($blog);
+});
+*/
+
+
 
 
 
