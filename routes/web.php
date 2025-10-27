@@ -2,13 +2,12 @@
 
 use App\Models\Blog;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
+
+Route::get('/',[PageController::class,'index']);
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-/*
 Route::get('/read/blog/{id}', function ($id) {
 
         $blog = Blog::where('id',$id)->with('category')->first();
@@ -21,7 +20,7 @@ Route::get('/read/blog/{id}', function ($id) {
 
         return response()->json($blog);
 });
-*/
+
 
 
 

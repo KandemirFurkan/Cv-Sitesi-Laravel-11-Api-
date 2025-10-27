@@ -83,8 +83,6 @@ Route::post('/sitesetting/store', [SiteSettingController::class, 'store']);
 Route::post('/sitesetting/{id}/update', [SiteSettingController::class, 'update']);
 
 
-
-
 Route::get('/referances', [ReferanceController::class, 'index']);
 Route::get('/referance/{id}', [ReferanceController::class, 'edit']);
 Route::post('/referance/store', [ReferanceController::class, 'store']);
