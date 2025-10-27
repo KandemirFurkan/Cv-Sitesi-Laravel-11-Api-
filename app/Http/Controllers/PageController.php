@@ -29,9 +29,9 @@ class PageController extends Controller
 
         $setting = SiteSetting::pluck('setting_value','setting_key')->toArray();
 
-         // $socialmedias = SocialMedia::where('status',1)->orderBy('id','desc')->get();
+        $socialmedias = SocialMedia::where('status',1)->orderBy('id','asc')->get();
 
 
-         return view('frontend.index',compact('slider','about','categories','skills','projects','blogs','setting'));
+         return view('frontend.index',compact('slider','about','categories','skills','projects','blogs','setting','socialmedias'));
     }
 }

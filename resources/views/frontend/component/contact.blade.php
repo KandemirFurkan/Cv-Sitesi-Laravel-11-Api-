@@ -54,15 +54,10 @@
                     </div>
                     <div class="social-links-area">
                       <ul>
-                         <li data-aos="zoom-out" data-aos-duration="800"><a href="#"><img src="assets/img/icons/facebook.svg" alt=""> facebook</a></li>
-                        <li data-aos="zoom-out" data-aos-duration="900"><a href="#"><img src="assets/img/icons/instagram.svg" alt=""> Instagram</a></li>
-                        <li data-aos="zoom-out" data-aos-duration="1000"><a href="#" class="twitter"><img src="assets/img/icons/twitter.svg" alt=""> twitter</a></li>
-                        <li data-aos="zoom-out" data-aos-duration="1100"><a href="#"><img src="assets/img/icons/linkedin.svg" alt=""> linkedin</a></li>
-                        <li data-aos="zoom-out" data-aos-duration="1200"><a href="#"><img src="assets/img/icons/dribble.svg" alt=""> Dribbble</a></li>
 
-                        @if (!empty($sorcialmedias) && $sorcialmedias->count() > 0)
-                            @foreach ($sorcialmedias as $sorcialmedia)
-                            <li data-aos="zoom-out" data-aos-duration="1200"><a href="#"><i class="{{$sorcialmedia->icon}}"></i> {{$sorcialmedia->title}}</a></li>
+                        @if (!empty($socialmedias) && $socialmedias->count() > 0)
+                            @foreach ($socialmedias as $socialmedia)
+                            <li data-aos="zoom-out" data-aos-duration="1200"><a href="#"><i class="{{$socialmedia->icon}}"></i> {{$socialmedia->title}}</a></li>
 
                             @endforeach
                         @endif
