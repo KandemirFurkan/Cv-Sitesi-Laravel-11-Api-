@@ -24,7 +24,6 @@ class ContactController extends Controller
             'phone' => 'nullable',
             'subject' => 'nullable',
             'body' => 'nullable',
-            'status' => 'required',
         ]);
         $validatedData['ip']=request()->ip();
         $contact = Contact::create($validatedData);
@@ -33,24 +32,33 @@ class ContactController extends Controller
 
     public function mailSend(Request $request)
     {
-        $subject=$request->input('subject');
-        $message=$request->input('message');
-        $email=$request->input('email');
+        $subject = $request->input('subject');
+        $message = $request->input('message');
+        $email = $request->input('email');
 
-        $contact=Contact::where('email',$email)->first();
+        $contact = Contact::where('email',$email)->first();
 
-if(empty($contact)){
-    return response()->json(['message' => 'E-posta bulunamadı'],401);
-}
+        if(empty($contact)) {
+            return response()->json(['message' => 'E-Posta Bulunamadı!'], 401);
+        }
 
-$contact->message=$message;
-Mail::to($email)->send(new ContactMail($subject,$contact));
+        $contact->message = $message;
 
-return response()->json(['message' => 'Mail Gönderildi'],200);
+        Mail::to($contact->email)->send(new ContactMail($subject, $contact));
 
-
+        return response()->json(['message' => 'Mail Gönderildi'], 200);
     }
 
+    public function subscribeForm(Request $request) {
+        $request->validate([
+            'email' => 'required|email|unique:subscriptions,email',
+        ]);
 
+        Subscription::create([
+            'email' => $request->email,
+        ]);
 
+        return response()->json(['error'=> false, 'message'=>'Abone Olundu']);
+
+    }
 }

@@ -13,7 +13,7 @@
                <p data-aos="fade-up" data-aos-duration="800">{!! $about->content !!}</p>
 
                <div class="btn-area" data-aos="fade-up" data-aos-duration="1200">
-                 <a href="mailto:vikinglab007@gmail.com" class="download-btn1 text-anime-style-3">İletişime Geç!</a>
+                 <a href="mailto:furkankandemirr@gmail.com" class="download-btn1 text-anime-style-3">İletişime Geç!</a>
                </div>
              </div>
            </div>

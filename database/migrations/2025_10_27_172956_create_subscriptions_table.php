@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('sliders', function (Blueprint $table) {
-
+        Schema::create('subscriptions', function (Blueprint $table) {
+            $table->id();
+            $table->string('email');
+            $table->timestamps();
         });
     }
 
@@ -21,9 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('sliders', function (Blueprint $table) {
-            $table->dropColumn('name');
-            $table->dropColumn('role');
-        });
+        Schema::dropIfExists('subscriptions');
     }
 };
